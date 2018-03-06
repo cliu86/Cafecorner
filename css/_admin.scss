@@ -1,0 +1,99 @@
+#searchPage{
+    margin-top: 5em;
+    #btnSearch{
+       background-color: $black-color;
+      color: $white-color;
+    }
+}
+
+
+
+#admin_page{
+  min-height: 45em;
+  margin-top: 3em;
+   @include advance-theme($white-color, $black-color, $black-color);
+    table{
+      thead{
+        border-bottom: 3px solid $red-color;
+        tr{
+          th{
+            font-size: large;
+          }
+        }
+      }
+      tbody{
+        font-size: larger;
+        tr{
+          &:hover{
+            background-color: $black-color;
+            color: $white-color;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+}
+
+.admin_edit{
+  .modal-dialog{
+    .modal-content{
+      //Header
+      .modal-header{
+        background-color: $black-color;
+        color: $white-color !important;
+        border-bottom-color:$red-color;
+        border-bottom-width:3px;
+      }
+      //Body
+      .modal-body{
+        .form-group{
+          input{
+            color: darken($black-color, 10%)}
+        }
+      }
+      //Footer
+      .modal-footer{
+        background-color: $black-color;
+          button.btn_admin_submit{
+            background-color: $red-color;
+            color: $white-color;
+            border-color: $red-color;
+          }
+      }
+    }
+  }
+}
+
+
+#formProduct{
+  @include advance-theme($red-color, $white-color, $white-color);
+  h3{
+    @include enquiry-h3($temp);
+    &+p{
+      @extend %enquiry-p;
+      color: lighten($black-color,10);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,112 @@
+#full-page-nav{
+  .modal-dialog[rel=main-modal-dialog] {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin:0;
+  }
+  .modal-content[rel=main-modal-content] {
+    height: 100%;
+    border-radius: 0;
+    color:$white-color;
+    overflow:auto;
+    background-color: $black-color;
+    //Modal Header
+    .modal-header[rel=modal-header]{
+      @media (max-height: 450px) {
+        min-height: 60px;
+      }
+      border-bottom: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      background-color: $black-color;
+      width: auto;
+      height: 14%;
+      button.close[data-dismiss=modal]{
+        i.fa[title=btnClose]{
+          color: $white-color;}
+      }
+    }
+
+    //Modal body
+    .modal-body[rel=modal-body]{
+      @media (max-height: 450px) {
+        min-height: 400px;
+      }
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      height: 70%;
+      justify-content: center;
+      align-items: center;
+      @include base-theme($black-color, $white-color);
+      a[target=_self]{
+        width: 36%;
+        text-align: center;
+        height: 23%;
+        background-color: inherit;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        align-items: center;
+        font-size: x-large;
+        @media (max-width: 375px) {
+          font-size: 1.3em;
+        }
+        &:hover{
+          text-decoration: none;}
+        i[title=icon]{
+          margin-bottom:0.2em}
+      }
+    }
+
+    //Modal footer
+    .modal-footer[rel=modal-footer]{
+      background-color: $black-color;
+      height: 16%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+        .btnJoinUs{
+
+          @include standard-button($red-color, $white-color, 13em, 2.6em, bold, large, 9px,
+                  $white-color, $red-color, $red-color);
+          border-radius: 0;
+          i{
+            margin-left:11px;
+            margin-right:11px;
+            animation-name:tada;
+            @include  animation-duration(1.5s);
+            @include  animation-iteration-count(infinite);
+          }
+          span{
+            margin: 0.25em auto;
+            display: inline-block;
+            [rel=btn-text]{
+              margin-left: 0.9em;}
+          }
+        }
+
+      div[title=social-icon]{
+        padding-top: 1em;
+        align-self: center;
+        width: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        i[title=facebook], i[title=twitter], i[title=instagram]{
+          color: $black-color;
+          &:hover {
+            color: $red-color;
+            transition: color, 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

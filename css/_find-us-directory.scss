@@ -1,0 +1,178 @@
+#find-us-directory{
+    .find-us{
+      /*---------------------Start find-us-text---------------------*/
+      .find-us-text{
+        width: 38%;
+        img{
+          width: 4em;
+          height:4em;}
+        h3{
+          font-size: 1.6em;}
+        h5{
+          color:  lighten($black-color, 10%);
+          margin-bottom: 2em;
+          font-size: large;}
+        //Input group
+        div.input-group{
+          width: 50%;
+          margin-bottom: 1.8em;
+          span{
+            cursor:pointer;
+            background-color: $red-color;
+            color: $white-color;
+            margin-left: 5px;
+            &:hover{
+              background-color: $black-color;
+              @include transition(backgroud-color, 1s);}
+          }
+          #txtEnterLocation{
+            height: 3em;
+            font-size:1em;
+            &:focus{
+              border:2px solid $gold-color;
+              @include transition(all, 0.7s);}
+          }
+        }
+        //Submit button
+        #btnSearchLocation{
+          @include standard-button($black-color, $white-color, 12em, 2.6em, bold, large, 0,
+                  $white-color, $red-color, $red-color);
+
+          i.fa-hand-pointer-o{
+            margin-left: 0.65em;
+            animation-name:tada;
+            @include  animation-duration(1.5s);
+            @include  animation-iteration-count(infinite);}
+        }
+      }
+      //End of find us text
+    }
+
+    /*-------------------Start Search results -------------------*/
+    .search-results{
+      display: flex;
+      // flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+      background-image: url('../images/bg-img.jpg');
+      background-size: cover;
+      h4{
+        a{
+          color: $black-color;}
+      }
+
+      .list{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 4em;
+        margin-top: 4em;
+        width: 40%;
+
+        background-color: transparentize($white-color, 0.1);
+
+        h3{
+          padding-top: 10px;
+          border-top: 3px solid lighten($red-color, 10);
+          padding-bottom: 10px;
+          border-bottom: 3px solid lighten($red-color, 10);
+          color: $black-color;
+          font-weight: bolder;
+        }
+
+        span{
+          margin-top: -0.4em;
+          margin-bottom: 0.9em;
+          color: $red-color;
+
+        }
+
+        div.restaurant-detail{
+          cursor: pointer;
+          padding-left: 8%;
+
+          .media-body{
+            .media-heading{
+              font-weight: bolder;
+              font-size: large;
+              color: $black-color;
+              a{
+                color: inherit;
+                &:hover{
+                  color: $gold-color;
+                  @include transition(color, 0.7s);
+                  text-decoration: none;}
+              }
+
+              &+p {
+                font-style: italic;
+                color:$black-color;
+                i{
+                  margin-right: 0.3em;
+                  color: $black-color;}
+                &:hover{
+                  color: $red-color;
+                  @include transition(color, 0.7s)}
+              }
+            }
+          }
+
+        }
+
+        #btnSearchAgain{
+          @include standard-button($black-color, $white-color, 16em, 3em, bold, large, 0,
+                  $white-color, $red-color, $red-color);
+          margin-top: 1.4em;
+          margin-bottom: 2em;
+
+          i.fa-hand-pointer-o{
+            margin-left: 0.8em;
+            animation-name:tada;
+            @include  animation-duration(1.5s);
+            @include  animation-iteration-count(infinite);}
+        }
+      }
+      //End of list
+    }
+    //End of results
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

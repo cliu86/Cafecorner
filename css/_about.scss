@@ -1,0 +1,118 @@
+//About
+
+//about Up
+.about-up {
+  display: flex;
+  align-items: center;
+  background-color: $red-color;
+  .about-image {
+    padding: 0;
+    order:1;
+    animation-name: pulse;
+    @include animation-duration(3s);
+  }
+  .about-text-left {
+    @include advance-theme($red-color, $white-color, $white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order:1;
+    @media (max-width: 767px) {
+      order:2;
+      width: 80%;
+    }
+    @extend %general-h4-p-span;
+  }
+  //It is important to change flex-direction to column when view on mobile device
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+//Mid logo
+.mid-logo-symbol{
+  @extend %mid-logo;
+}
+
+//about mid
+.about-mid {
+  display: flex;
+  align-items: center;
+  background-color: $black-color;
+  .about-image {
+    padding: 0;
+    order:1;
+    @media (max-width: 767px) {
+      order: 3;
+    }
+  }
+  .about-text-right {
+    @include advance-theme($black-color, $white-color, $white-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order:1;
+    @media (max-width: 767px) {
+      order:4;
+      width: 80%;
+    }
+    @extend %general-h4-p-span;
+  }
+  //It is important to change flex-direction to column when view on mobile device
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+//about Down
+.about-down {
+  display: flex;
+  align-items: center;
+  background-color: $white-color;
+  .about-image {
+    padding: 0;
+    order:1;
+    @media (max-width: 767px) {
+      order: 3;
+      margin-top: -1.5em;
+    }
+  }
+  .about-text-right {
+    @include advance-theme($white-color, $black-color, $red-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order:1;
+    @media (max-width: 767px) {
+      order:4;
+      width: 80%;
+    }
+    @extend %general-h4-p-span;
+    span{
+      color:darken($red-color, 10);
+    }
+  }
+  //It is important to change flex-direction to column when view on mobile device
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

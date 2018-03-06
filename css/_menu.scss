@@ -1,0 +1,95 @@
+  //Menus
+  .big-menu{
+    animation-name: zoomIn;
+    @include animation-duration(1.5s);
+    background-color: $white-color;
+  }
+  .menu-section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 9em;
+    @media (min-width: 1500px) {
+      height: 10em;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      height:auto;
+      width: 100%;
+    }
+    .menu{
+      height: 6em;
+      border: 5px double $red-color;
+      border-bottom-right-radius: 24px;
+      border-top-left-radius: 24px;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      margin-left: 1em;
+      text-align: center;
+      @media (min-width: 1500px) {
+        height: 7em;
+      }
+      @media (max-width: 767px) {
+        margin-bottom: 1em;
+        width: 80%;
+        align-self: center;
+        justify-self: center;
+      }
+    }
+    a{
+      color: $red-color;
+      font-weight: bolder;
+      font-size: larger;
+      letter-spacing: 1px;
+      word-spacing: 4px;
+      justify-content: center;
+      &:hover{
+        text-decoration: none;
+        color: $white-color;
+        background-color: $red-color;
+        @include border-radius(13px);
+        @include transition(border-radius, 0.6s);
+        animation-name: pulse;
+        @include animation-duration(1.5s);
+      }
+      i{
+        margin-left: 0.5em;
+        animation-name: tada;
+        @include animation-duration(1.5s);
+        @include animation-iteration-count(infinite);
+      }
+    }
+  }
+
+  .order-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -1.6em;
+    #btnOrderList{
+      font-weight: bold;
+      @include standard-button($red-color, $white-color, 22em, 2.8em, bold, large, 22px,
+              $white-color, $black-color, $black-color);
+      @media (max-width: 767px) {
+        width: 14em;
+        height: 2.5em;
+      }
+    }
+
+    #btnMakeOrder{
+      background-color: $black-color;
+      color: $white-color;
+      height: 3em;
+      width: 50%;
+      margin: auto;
+      font-weight: bold;
+    }
+  }
+
+
+

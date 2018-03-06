@@ -1,0 +1,93 @@
+
+/*---------------------full page Menu ------------------------*/
+.order-menu-main{
+
+  cursor: pointer;
+  background-color: $red-color;
+  border: 3px double $gold-color;
+
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 2em;
+  margin-top: 3.5em;
+  button{
+    background-color: $red-color;
+    border: none;
+    color:$gold-color;
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+    color: $white-color;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px groove $white-color;
+
+  }
+  .order-menu-left, .order-menu-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $red-color;
+    h3{
+      color: $gold-color;
+      text-align: center;
+      font-weight: bold;
+    }
+    h4{
+      color: $white-color;
+      text-align: left;
+      display: inline;
+      i.fa-plus-square{
+        margin-left: 1em;
+        &:hover{
+          animation-name: hvr-push;
+          @include animation-duration(1s);
+          color: $gold-color;
+        }
+      }
+    }
+    p{
+      color: $white-color;}
+  }
+
+  @media (max-width: 450px) {
+    font-family: $font-family;
+  }
+}
+
+.order-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  #collapseExample{
+    margin-bottom: 2em;
+    width: 60%;
+    .well{
+      height: auto;
+      background-color: $white-color;
+      border: 3px double $red-color;
+      border-radius: 15px;
+      table{
+        cursor: pointer;
+        th{
+          font-size: 1.6em}
+        td{
+          font-size: large;
+          i{
+            color: $red-color;
+            span{
+              display: none;}
+          }
+        }
+      }
+    }
+    @media (max-width: 767px){
+      width: 90%;
+    }
+  }
+}
+
+
+
+

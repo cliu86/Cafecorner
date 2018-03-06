@@ -1,0 +1,189 @@
+/*-------------------------------------Home page---------------------------------------*/
+#carousel-example-generic{
+  margin-top: -1.5em;
+}
+
+
+/*-------------------------------------Main content---------------------------------------*/
+#mainContent {
+  .opening-video-wrapper{
+    img{
+      display: none;
+      @media(max-width: 450px){
+        display: block;
+      min-height: 14em}
+    }
+    #opening-video{
+      height: 35em;
+      @media(min-width: 1900px){
+        height: 55em;
+      }
+      @media(min-width: 1650px) and (max-width: 1899px){
+        height: 45em;
+      }
+      @media(max-width: 767px){
+        height: 25em;
+        max-width: 767px;
+      }
+      @media(max-width: 450px){
+        display: none;}
+    }
+  }
+
+  //Book a table
+  #reservationTable{
+    @media(max-width: 450px){
+      th{
+        font-size: small;
+      }
+      td{
+        font-size: small;
+      }
+    }
+  }
+
+  .book-a-table {
+    height: 33em;
+    @media(max-width: 500px){
+      height: 28em;
+    }
+    @media(min-width: 1800px){
+      height: 38em;
+    }
+    @include base-theme($red-color, $white-color);
+    h3 {
+      margin-bottom: 1em;
+    }
+    #bookTable {
+      margin-top: 5em;
+      @media(max-width: 500px){
+        margin-top: 3em;;
+      }
+      @media(min-width: 1800px){
+        margin-top: 6.8em;;
+      }
+      select, input {
+        font-size: large;
+        font-weight: 600;
+        height: 2.8em;
+      }
+    }
+    #btnBookNow {
+      @include standard-button($black-color, $white-color, 15em, 2.6em, bold, larger, 8px,
+              $red-color, $white-color, $white-color);
+      margin-top: 7em;
+      @media(min-width: 1750px){
+        width: 17em;
+        height: 2.8em;
+      }
+      @media(max-width: 450px){
+        width: 13em;
+        height: 2.3em;
+      }
+
+      i.fa-angle-right {
+        margin-left: 1em;
+        @include animation-iteration-count(infinite);
+      }
+    }
+  }
+
+  //Description
+
+  //Description Up
+  .description-up {
+    display: flex;
+    align-items: center;
+    background-color: $white-color;
+    .description-image {
+      padding: 0;
+      order:1;
+      animation-name: pulse;
+      @include animation-delay(0.7s);
+      @include animation-duration(3.3s);
+    }
+    .description-text-left {
+      @include advance-theme($white-color, $black-color, lighten($red-color, 20));
+      @extend %general-h4-p-span;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order:1;
+      h4[title=home-page-up]{
+        border-color: darken($red-color, 7%);
+      }
+
+      //Button View more
+      a.btn-get-offer{
+        margin-top: 0.5em;
+        background-color: $black-color;
+        height: 2.4em !important;
+        @media (min-width: 1650px) {
+          margin-top: 1em;
+        }
+        &:hover{
+           border: none;
+          color: $white-color;
+        }
+      }
+
+      @media (max-width: 767px) {
+        order:2;
+      }
+    }
+    //It is important to change flex-direction to column when view on mobile device
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  //Mid logo, locate in style.scss
+  .mid-logo-symbol{
+    @extend %mid-logo;
+  }
+
+  //Description Down
+  .description-down {
+    display: flex;
+    align-items: center;
+    background-color: $black-color;
+    .description-image {
+      animation-name: pulse;
+      @include animation-delay(0.7s);
+      @include animation-duration(3.3s);
+      padding: 0;
+      order:1;
+      @media (max-width: 767px) {
+        order:3;
+      }
+    }
+    .description-text-right {
+      @include advance-theme($black-color, $white-color, $white-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order:1;
+      @media (max-width: 767px) {
+        order:4;
+      }
+      @extend %general-h4-p-span;
+      //Button View more
+      a.btn-get-offer{
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        background-color: $red-color;
+        height: 2.6em !important;
+        @media (min-width: 1650px) {
+          margin-top: 1em;}
+        &:hover{
+          border-color: $red-color;
+          color: $white-color;
+        }
+      }
+    }
+    //It is important to change flex-direction to column when view on mobile device
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "cs602",
+  "version": "1.0.0",
+  "description": "finalproject",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "changliu",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.3.0"
+  }
+}

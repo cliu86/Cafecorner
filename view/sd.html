@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function checkDate (dateString){
+            var temp = dateString.replace('/', ',');
+            var reservation_date = Date.parse(temp);
+            var now = new Date();
+            if(reservation_date<now){
+                return false;
+            }else{
+                return true;
+            }
+        }
+        console.log (checkDate ('04/05/2017'));
+
+    </script>
+</body>
+</html>

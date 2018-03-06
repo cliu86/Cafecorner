@@ -1,0 +1,82 @@
+#animatedModal{
+  background-color: $red-color;
+  .close-animatedModal{
+    color: $white-color;}
+  .modal-content{
+    background-color: $red-color;
+    h3{
+      width: 50%;
+      text-align: center;
+      border-bottom: 3px solid $white-color;
+      @media (max-width: 450px){
+        width: 100%;
+      }
+    }
+    h4{
+      text-align: center;
+    }
+    border-top: $white-color;
+    color: white;
+    input{
+      height: 2.3em;
+      @media (max-width: 767px){
+        height: 2.7em;
+      }
+    }
+
+    #btnSignIn, #btnSignUp{
+      @include standard-button($black-color, $white-color, 16em, 2.4em, bold, larger, 8px,
+              $red-color, $white-color, $white-color);
+      //border:none;
+      i.fa-angle-right {
+        margin-left: 1em;
+        animation-name: tada;
+        @include animation-duration(1s);
+        @include animation-iteration-count(infinite);
+      }
+      @media (max-width: 450px){
+        @include standard-button($black-color, $white-color, 13em, 2.25em, bold, larger, 8px,
+                $red-color, $white-color, $white-color);
+      }
+    }
+    #formSignIn{
+      margin-bottom: 1em;
+      @media (max-width: 450px){
+        margin-bottom: 3em;
+      }
+      span.input-group-addon{
+        background-color: $red-color;
+        i{
+          color: $white-color;}
+      }
+    }
+    #formSignUp{
+      margin-bottom: 5em;
+      span.input-group-addon{
+        background-color: $red-color;
+        i{
+          color: $white-color;}
+      }
+      #discount{
+        height: 3em;
+      }
+    }
+    #email_signIn_error, #pw_signIn_error, #fn_error, #ln_error,
+    #email_signUp_error, #phone_signUp_error,#pw_signUp_error,#cpw_signUp_error, #discount_error
+    {
+      color:$black-color;
+      font-weight: 600;
+      visibility: hidden;
+      font-size: larger;
+      text-align: center;
+      i{
+        margin-right: 0.2em;
+      }
+    }
+
+    input{
+      font-size: large;
+    }
+  }
+
+}

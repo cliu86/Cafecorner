@@ -1,0 +1,119 @@
+%enquiry-button{
+  background-color: $black-color;
+  color: $white-color;
+  font-weight: bold;
+  border:3px double $black-color;
+  &:hover{
+    background-color: $red-color;
+    color: $white-color;
+    border:3px double $white-color;
+    @include transition(all, 0.85s);
+    animation-name: pulse;
+    @include animation-duration(1.5s);
+  }
+}
+
+$temp:lighten($red-color, 10);
+
+@mixin enquiry-h3($border-color){
+  &[title]{
+    border-top: 2px groove $border-color;
+    padding-top: 0.7em;
+    border-bottom: 2px groove $border-color;
+    padding-bottom: 0.7em;
+    margin-bottom: 1em;
+    margin-top: 3em;
+    &+span{
+        margin-top: -1em;
+        margin-bottom: 1em;
+    }
+  }
+  border:none;
+}
+
+%enquiry-p{
+  font-family: $font-family-2;
+  width: 86%;
+}
+
+//The main event content
+.event{
+  img{
+    width:100%;
+  }
+  background-color: $white-color;
+  //left white content
+  .event-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include advance-theme($white-color, $black-color, $red-color);
+    h3{
+      @include enquiry-h3($temp);
+      &+p{
+        @extend %enquiry-p;
+        color: lighten($black-color,10);
+      }
+    }
+
+    #btnViewMenu {
+      @extend %enquiry-button;
+      margin-top: 1em;
+      margin-bottom: 2em;
+      width: 60%;
+    }
+  }//end of left content
+
+  //Right  red event content
+  .event-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include advance-theme($red-color, $white-color, $white-color);
+    h3{
+      &+p{
+        @extend %enquiry-p;
+      }
+      @include enquiry-h3($white-color);
+    }
+
+    //MAKE AN ENQUIRY
+    #formEnquiry{
+      width: 90%;
+      div.input-group{
+        span.input-group-addon{
+          background-color: $red-color;
+          i{
+            color: $white-color;}
+          &+input{
+            height:2.8em;
+            font-size: larger;
+          }
+        }
+        //make errors display none
+        &+span{
+          visibility: hidden;}
+      }
+
+      select{
+        height:2.8em;
+        font-size: larger;
+        color: lighten($black-color,33);
+      }
+      textarea{
+        font-size: large;
+        color: lighten($black-color, 33);
+      }
+
+      #btnSendEnquiry{
+        @extend %enquiry-button;
+        margin-bottom: 4.5em;
+        margin-top: 0.5em;
+      }
+
+    }//end of Form enquiry
+  }//end of right red content
+
+}// End of event main content

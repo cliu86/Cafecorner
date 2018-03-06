@@ -1,0 +1,58 @@
+.kids{
+  display: flex;
+  flex-direction: column;
+  .kids-content{
+    @media (max-width: 767px) {
+      margin-top: 0;
+    }
+    background-color: $red-color;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -70px;
+    img{
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .kids-text{
+    background-color: $red-color;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+      h3{
+        color:$white-color ;
+        width: 20%;
+      }
+      p{
+        font-size: large;
+        color: $white-color;
+        text-align: center;
+        width: 40%;
+        margin-top: 2em;
+        @media (max-width: 1200px) {
+          width: 50%;
+        }
+        @media (max-width: 767px) {
+          width: 70%;
+        }
+      }
+      a{
+        width: 18%;
+        @extend  %enquiry-button;
+        margin-bottom: 2em;
+        @media (max-width: 900px) {
+          width: 30%;
+        }
+        @media (max-width: 767px) {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,48 @@
+$font-family: 'Vollkorn', serif;
+$font-family-2: 'Raleway';
+$font-family-3: 'Open Sans', sans-serif;
+$black-color: rgb(29,29,29);
+$red-color: rgb(155, 27, 37);//#9b1b25
+$gold-color:#d9a32e;
+$white-color:#fbf7ef; // seashell
+
+body{
+  font-family: $font-family-2 !important;
+  box-sizing: border-box !important;
+  background-color: $white-color;
+}
+
+//Google map
+#map_canvas {
+  height: 400px;
+  width: 100%;
+}
+
+#map_canvas img {
+  max-width: none; // to prevent UI control bug
+}
+
+#map_canvas .content {
+  padding: 0 0.5em 1em 0.5em;
+}
+
+#map_canvas .firstHeading {
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  margin: 0;
+}
+
+#map_canvas #bodyContent p {
+  font-size: 1em;
+  margin: 0;
+}
+
+
+//Border-radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+

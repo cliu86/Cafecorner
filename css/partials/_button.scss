@@ -1,0 +1,45 @@
+//Global buttons
+a:focus, button:focus{
+  outline: none !important;
+}
+//Remove the underline when <a> clicked
+a{
+  &:focus{
+    text-decoration: none !important; }
+}
+
+//Custom button
+@mixin standard-button($bg-color, $text-color,$width,$height, $font-weight, $font-size,
+                        $border-radius, $hover-bg-color, $hover-text-color, $hover-border-color){
+  background-color: $bg-color;
+  color: $text-color;
+  width: $width;
+  height: $height;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  border-bottom-right-radius: 21px;
+  border-top-left-radius: 21px;
+  //border: 3px double $text-color;
+  &:hover{
+    @include transition(all, 0.5s);
+    border-radius: 0;
+    border-bottom-width: 3px;
+  }
+}
+
+
+.btn-get-offer {
+  @include standard-button($black-color, $white-color, 12em, 2.5em, bold, larger, 0px,
+          $white-color, $black-color, $black-color);
+  //For ex-large screen
+  @media (min-width: 1900px){
+    @include standard-button($black-color, $white-color, 14em, 2.9em, bold, large, 0px,
+            $white-color, $black-color, $black-color);
+  }
+  animation-name: fadeInUp;
+  @include animation-duration(3s);
+  i.fa-angle-right {
+    margin-left: 1em;
+    @include animation-iteration-count(infinite);
+  }
+}

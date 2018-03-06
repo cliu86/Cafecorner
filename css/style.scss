@@ -1,0 +1,372 @@
+@import "collection";
+
+/* -------------------------------------------------------------------------------------------*/
+/*--------------------------IDs are defined like' indexOfSum '--------------------------------*/
+/*--------------------------Class are defined like' index-of-sum '---------------------------*/
+
+/*------------------------------------Banner--------------------------------------------*/
+#banner{
+  background-color: $white-color;
+  .row{
+    height: 11em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &>.social-icon{
+      align-self: center;
+      span{
+        i.fa-circle{
+          color: $black-color;}
+        &:hover{
+          animation-name: hvr-icon-pop;
+         @include animation-duration(1s);
+        }
+      }
+    }
+
+    .join-us{
+      margin-left: -0.5em;
+      align-self: center;
+      justify-content: flex-end;
+      display: flex;
+      .btnJoinUs, #btnUserProfile{
+        align-items: center;
+        @include standard-button($red-color, $white-color, 13.3em, 2.6em, bold, large, 9px,
+                                  $white-color, $red-color, $red-color);
+        border-radius: 0;
+        i{
+          margin-left:11px;
+          margin-right:11px;
+          animation-name:tada;
+          @include  animation-duration(1.5s);
+          @include  animation-iteration-count(infinite);
+        }
+        span{
+           margin: 0.25em auto;
+           display: inline-block;
+        }
+
+        @media (min-width: 992px) and(max-width: 1200px){
+          @include standard-button($red-color, $white-color, 11em, 2.44em, bold, larger, 9px,
+                  $white-color, $red-color, $red-color);
+          border-radius: 0;
+        }
+        @media (min-width: 1700px){
+          @include standard-button($red-color, $white-color, 15.5em, 2.7em, bold, larger, 9px,
+                  $white-color, $red-color, $red-color);
+          border-radius: 0;
+        }
+      }
+
+      div.btn-group{
+        ul{
+          cursor: pointer;
+          background-color:$red-color;
+          li{
+            background-color:inherit;
+            a{
+              color: $white-color;
+              font-size: large;
+              font-weight: 600;
+              &:hover{
+                background-color:inherit;
+                color: $gold-color;}
+            }
+          }
+        }
+      }
+    }
+
+    .banner-logo{
+      align-self: center;}
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}//End of Banner
+
+/*------------------------------------ NAV----------------------------------------*/
+#nav, #slideInNav{
+  border-radius: 0;
+  font-family: $font-family !important;
+  @include base-theme($black-color, $white-color);
+  div.navbar-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    a[href="#animatedModal"]{
+      align-items: center;
+      height: 2em;
+      margin: 2px auto;
+      color: $red-color;
+      @media (max-width: 767px) {
+        margin-left: -1em;
+      }
+    }
+
+    a[href="index.php"]{
+      height: 2.8em;
+      margin: 2px auto;
+    }
+    div[title=btnGroup]{
+      align-items: center;
+      height: 2em;
+      margin: 2px auto;
+     color:$red-color;
+      ul[title=drpDown]{
+        cursor: pointer;
+        background-color:$red-color;
+        li{
+          background-color:inherit;
+          a[href="#"]{
+            color: $white-color;
+            font-size: large;
+            font-weight: 600;
+            &:hover{
+              background-color:inherit;
+              color: $gold-color;}
+          }
+        }
+      }
+      @media (max-width: 767px) {
+        margin-left: -1em;
+      }
+    }
+
+    img{
+     justify-self: flex-start;}
+
+    button[type=button]{
+      align-items: center;
+      height: 2.8em;
+      margin: 2px auto;
+      border: none;
+      color: $red-color;
+      &:hover, &:focus{
+        background-color: $white-color;}
+      i{
+        margin: 3px auto;}
+      @media (max-width: 767px) {
+        margin-right: -1em;
+      }
+    }
+
+    @media (max-width: 767px) {
+      height: 3.5em;
+    }
+  }
+
+  .flex-nav-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.1em;
+    ul.nav {
+      li {
+        a {
+          @include base-theme($black-color, $white-color);
+          font-size: 1.6em;
+          font-weight: bold;
+          //For screen 1500px or larger
+          @media (min-width: 1500px) {
+            font-size: x-large;
+          }
+          //For screen 920ox or smaller
+          @media (max-width: 920px) {
+            font-size: 1.2em;
+          }
+          //For tablet 7, 8 , 9, 10inch wide
+          @media (max-width: 767px) {
+            flex-direction: column;
+            text-align: center;
+            font-size: x-large;
+            margin-bottom: 0.8em;
+          }
+        }
+        //Join us button in the nav
+        .btnJoinUs {
+          @include standard-button($red-color, $white-color, 12em, 2.45em, bold, larger, 9px,
+                  $black-color, $white-color, $white-color);
+          text-align: center;
+        }
+      }
+    }
+  }
+  //Logo-nav for phone
+  img.logo-nav{
+    display: none;
+    @media (max-width: 767px) {
+      display: inline-block;
+      padding-top: 3px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    background-color: whitesmoke;
+    border-color: $white-color;
+    height: 4.6em;
+  }
+
+
+}//End of Nav
+
+//Scroll slideIn Nav
+#slideInNav{
+  display: none;
+}
+
+/*----------------------------------------Footer----------------------------------*/
+footer{
+  height:auto;
+  background-color: $black-color;
+  .footer-content{
+    @include advance-theme($black-color, $white-color, $white-color);
+    height: 21em;
+    padding-top: 3em;
+    .footer-left{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      p{
+        align-content: stretch;
+        text-align: center;
+        font-size: medium;
+        text-indent: 0;
+        @media (max-width: 1000px) {
+          font-size: small;}
+      }
+      .input-group{
+        @media (max-width: 1000px) {
+          width: 21em;}
+        @media (max-width: 800px) {
+          width: 18em;}
+        @media (max-width: 450px) {
+          width: 16em}
+
+        width: 24em;
+        height: 3em;
+        margin-top: 2em;
+        span{
+          background-color: inherit;
+          color: inherit;
+          width: 3.5em;
+        }
+        input{
+          height: 3em;
+          font-size: larger;
+        }
+      }
+    }
+    .footer-right{
+      margin-top: 1em;
+      .social-icon{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: auto;
+        span{
+          border: 1px solid $white-color;
+          border-radius: 100px;
+          color: $black-color;
+          background-color: $white-color;
+          margin-left: 0.5em;
+        }
+      }
+
+      .info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        h3{
+          border: none;
+          margin-bottom: 1em;
+          @media (max-width: 1000px) {
+            font-size: large;}
+        }
+        p{
+          font-size: medium;}
+      }
+      @media (max-width: 767px) {
+        margin-top: 3em}
+
+    }
+
+    @media (max-width: 767px) {
+      height: auto}
+  }
+  .footer-links{
+    cursor: pointer;
+    color: $white-color;
+    font-size: 1.1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 3em;
+    span{
+      margin-left: 1em}
+    @media (max-width: 450px) {
+      height: auto;
+    }
+  }
+
+}
+
+
+/*---------------------------------Mid logo---------------------*/
+%mid-logo{
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  img{
+    width: 186px;
+    height: 186px;
+    margin-top: -93px;
+
+    @media (max-width: 1400px){
+      width: 134px;
+      height: 134px;
+      margin-top: -67px;
+    }
+    @media (max-width: 1100px){
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+    }
+    display: none;
+    animation-name: zoomIn;
+    @include animation-duration(2.5s);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
